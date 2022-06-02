@@ -1,21 +1,27 @@
 {
-  "name": "publish-lib-with-cra",
+  "name": "@shadmankhan/publish-lib-with-cra",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "description": "Simple and easy example to publish your react component library with CRA",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "clean": "rm -rf dist",
+    "prepare-package": "npm run clean && NODE_ENV=production babel src --out-dir dist --copy-files && cp package.json dist/package.json"
   },
+  "main": "exports.js",
   "eslintConfig": {
     "extends": [
       "react-app",
@@ -35,10 +41,34 @@
     ]
   },
   "devDependencies": {
-    "react-scripts": "5.0.1",
     "@babel/cli": "^7.17.10",
     "@babel/core": "^7.18.2",
     "@babel/preset-env": "^7.18.2",
-    "@babel/preset-react": "^7.17.12"
-  }
+    "@babel/preset-react": "^7.17.12",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "peerDependencies": {
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  },
+  "directories": {
+    "lib": "src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shadmankhan/publish-lib-with-cra.git"
+  },
+  "keywords": [
+    "cra",
+    "package",
+    "javascript",
+    "react",
+    "babel"
+  ],
+  "author": "Shadman Khan",
+  "bugs": {
+    "url": "https://github.com/shadmankhan/publish-lib-with-cra/issues"
+  },
+  "homepage": "https://github.com/shadmankhan/publish-lib-with-cra#readme"
 }
