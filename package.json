@@ -1,6 +1,6 @@
 {
   "name": "@shadmankhan/publish-lib-with-cra",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "private": false,
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
@@ -19,7 +19,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "clean": "rm -rf dist",
-    "prepare-package": "npm run clean && NODE_ENV=production babel src --out-dir dist --copy-files && cp package.json dist/package.json"
+    "prepare-package": "npm run clean && NODE_ENV=production babel src --out-dir dist --copy-files --no-copy-ignored && cp package.json dist/package.json"
   },
   "main": "exports.js",
   "eslintConfig": {
